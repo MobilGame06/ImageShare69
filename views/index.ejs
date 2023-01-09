@@ -1,0 +1,25 @@
+<html>
+<head>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+      <script>
+            $(document).ready(function(){
+              var user,pass;
+              $("#submit").click(function(){
+                category=$("#category").val();
+                $.post("/category/" + category ,{category: category}, function(data){
+                    window.location.href = '/category/' + category
+                  if(data === 'yes') {
+                      alert("login success");
+                    }
+                });
+              });
+            });
+          </script>
+<body>
+    <h1>Hello people !</h1>
+    
+    <input id="category" size="40" type="text" />
+    <input id="submit" type="button" value="Submit" />
+    
+</body>
+</html>
