@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Category</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+  <a href="/"><img width="35" height="35" src="https://cdn-icons-png.flaticon.com/512/25/25694.png"></a>
+
+  <div class="mt-5 mx-5"></div>
 <% for (let i = 0; i < imageUrls.length; i++) { %>
-    <img widht="500" height="500" loading="lazy "src="<%= imageUrls[i] %>">
+    <img widht="500" height="500" loading="lazy "src="<%= imageUrls[i] %>" class="rounded mx-5 mb-5">
   <% } %>
+</div>
+</body>
+</html>

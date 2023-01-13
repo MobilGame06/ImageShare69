@@ -8,9 +8,6 @@
                 category=$("#category").val();
                 $.post("/category/" + category ,{category: category}, function(data){
                     window.location.href = '/category/' + category
-                  if(data === 'yes') {
-                      alert("login success");
-                    }
                 });
               });
             });
