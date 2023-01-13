@@ -36,8 +36,9 @@ async function handleCategory(req, res){
         if (err){
             throw err
         }else{
-            var data=JSON.parse(JSON.stringify(rows))
+            var data = JSON.parse(JSON.stringify(rows))
             const imageUrls = [];
+            var category = req.params.id
             // Füge jede URL aus der Datenbank dem Array hinzu
             data.forEach((element, index) => {
                 imageUrls.push(data[index].url);
@@ -45,7 +46,7 @@ async function handleCategory(req, res){
 
             // Übergebe das Array an das Template als Variable
             console.log(imageUrls)
-            res.render("category", { imageUrls });
+            res.render("category", { imageUrls, category });
            
         }    
     })
