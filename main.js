@@ -25,7 +25,10 @@ app.set("view engine", "ejs")
 
 //index
 app.get("/", (req, res) => {
-    res.render("index")
+    db.query('SELECT category FROM categories', function (error, results, fields) {
+        if (error) throw error;
+        res.render('index', { categories: results });
+    });
 })
 
 
