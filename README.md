@@ -60,5 +60,13 @@
    ```sh
    pm2 start server.js --name ImageShare69
    ```
+   
+### Usage
+to add Categories and images you need to start the app.js script
+```sh
+node app.js
+```
+
+then follow the menu prompts.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
