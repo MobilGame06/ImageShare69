@@ -24,14 +24,18 @@ const mainMenu = await inquirer.prompt({
     message: 'What you wanne do?',
     choices: [
         'add new image',
-        'add new category'
+        'add new category',
+        'quit'
     ]
 })
 .then((answers) =>{
     if (answers.mainMenu == "add new image"){
         newImage()
-    }else{
+    }else if(answers.mainMenu == "add new category"){
         newCategory()
+    }else{
+        console.clear()
+        process.exit()
     }
 })
 }
