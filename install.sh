@@ -18,4 +18,4 @@ npm install
 echo -ne '>>>>>>>>>>>>>>>>>>>>>>>>>>[100%]\r'
 sleep 5
 clear
-echo ''
+echo 'https://github.com/MobilGame06/ImageShare69/blob/main/README.md'
