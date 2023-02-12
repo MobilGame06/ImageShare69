@@ -52,9 +52,10 @@
    ```env
    myHost=mysqlIP
    myUser=mysqlUser
-   myPassword=tmysqlPW
+   myPassword=mysqlPW
    myDatabase=imageShare69
    PORT=8666
+   requestsperminute=30
    ```
 5. Start it via pm2
    ```sh
