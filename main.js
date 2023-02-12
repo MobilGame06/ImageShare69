@@ -4,8 +4,14 @@ CONFIG = process.env
 
 const express = require("express")
 const app = express()
+var RateLimit = require('express-rate-limit');
+var limiter = RateLimit({
+  windowMs: 1*60*1000, // 1 minute
+  max: 30
+});
 
 app.use(express.urlencoded({ extended: true}))
+app.use('', limiter)
 
 const db = mysql.createConnection({
     host : CONFIG.myHost,
