@@ -10,8 +10,15 @@ var limiter = RateLimit({
   max: CONFIG.requestsperminute
 });
 
+var morgan = require('morgan')
+
 app.use(express.urlencoded({ extended: true}))
 app.use('', limiter)
+
+if (CONFIG.logging == "true") {
+    app.use(morgan('combined'))
+  }
+  
 
 const db = mysql.createConnection({
     host : CONFIG.myHost,
@@ -54,7 +61,6 @@ async function handleCategory(req, res){
             });
 
             // Übergebe das Array an das Template als Variable
-            console.log(imageUrls)
             res.render("category", { imageUrls, category });
            
         }    
