@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Erstellungszeit: 11. Feb 2023 um 19:35
+-- Erstellungszeit: 01. Mrz 2023 um 13:38
 -- Server-Version: 10.6.5-MariaDB-1:10.6.5+maria~focal
 -- PHP-Version: 7.4.20
 
@@ -24,25 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `categories`
---
-
-CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
-  `category` tinytext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
--- --------------------------------------------------------
-
---
 -- Tabellenstruktur für Tabelle `images`
 --
 
 CREATE TABLE `images` (
   `id` int(11) NOT NULL,
   `url` tinytext NOT NULL,
-  `category` tinytext NOT NULL
+  `category` tinytext NOT NULL,
+  `text` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -52,12 +41,6 @@ CREATE TABLE `images` (
 --
 -- Indizes der exportierten Tabellen
 --
-
---
--- Indizes für die Tabelle `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indizes für die Tabelle `images`
@@ -70,16 +53,10 @@ ALTER TABLE `images`
 --
 
 --
--- AUTO_INCREMENT für Tabelle `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT für Tabelle `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
