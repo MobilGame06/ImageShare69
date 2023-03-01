@@ -14,7 +14,13 @@
   <h1 class="text-center text-white mt-5"><%= category %></h1>
   <div class="mt-5 mx-5"></div>
   <% for (let i = 0; i < imageUrls.length; i++) { %>
-    <img widht="500" height="500" loading="lazy "src="<%= imageUrls[i] %>" class="rounded mx-5 mb-5">
+    <div class="image-container">
+      <img widht="500" height="500" loading="lazy "src="<%= imageUrls[i] %>" class="rounded mx-5 mb-5">
+      <div class="rounded mx-5 mb-5 text-box">
+        <p><%= imageTexts[i] %></p>
+
+      </div>
+    </div>
   <% } %>
 </div>
 </body>
@@ -24,4 +30,23 @@
   body {
     font-family: 'Roboto', sans-serif;
   }
+  .image-container {
+  position: relative;
+  display: inline-block;
+}
+.text-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.text-box button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
 </style>

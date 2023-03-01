@@ -62,7 +62,17 @@ async function newImage(){
         mainMenu()
         return
     }
-    imagesData = {url: imageUrl.imageUrl, category: category.category}
+
+    const text = await inquirer.prompt({
+        name: 'text',
+        type: 'input',
+        message: 'Enter the text to display (quit to go back)'
+    })
+    if (text.text == "quit"){
+        mainMenu()
+        return
+    }
+    imagesData = {url: imageUrl.imageUrl, category: category.category, text: text.text}
     db.query('INSERT INTO images SET ?', imagesData)
     newImage();
     return
