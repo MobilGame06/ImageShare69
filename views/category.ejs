@@ -15,14 +15,18 @@
   <div class="mt-5 mx-5"></div>
   <% for (let i = 0; i < imageUrls.length; i++) { %>
     <div class="image-container">
-      <img widht="500" height="500" loading="lazy "src="<%= imageUrls[i] %>" class="rounded mx-5 mb-5">
+      <img widht="500" height="500" loading="lazy "src="<%= imageUrls[i] %>" class="rounded mx-5 mb-5" onclick="showImage(this)">
       <div class="rounded mx-5 mb-5 text-box">
         <p><%= imageTexts[i] %></p>
-
       </div>
     </div>
   <% } %>
 </div>
+
+<div id="image-viewer" onclick="hideImage()">
+  <img src="" id="full-image" />
+</div>
+
 </body>
 </html>
 
@@ -49,4 +53,33 @@
   right: 10px;
 }
 
+#image-viewer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  text-align: center;
+}
+
+#image-viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: 3%;
+}
 </style>
+
+<script>
+  function showImage(img) {
+    var fullImg = document.getElementById("full-image");
+    fullImg.src = img.src;
+    document.getElementById("image-viewer").style.display = "block";
+  }
+
+  function hideImage() {
+    document.getElementById("image-viewer").style.display = "none";
+  }
+</script>
