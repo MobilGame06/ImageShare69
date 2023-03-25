@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Erstellungszeit: 01. Mrz 2023 um 13:38
+-- Erstellungszeit: 25. Mrz 2023 um 18:01
 -- Server-Version: 10.6.5-MariaDB-1:10.6.5+maria~focal
 -- PHP-Version: 7.4.20
 
@@ -24,6 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL,
+  `category` tinytext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+--
 -- Tabellenstruktur für Tabelle `images`
 --
 
@@ -34,13 +44,12 @@ CREATE TABLE `images` (
   `text` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Daten für Tabelle `images`
---
 
 --
--- Indizes der exportierten Tabellen
+-- Indizes für die Tabelle `categories`
 --
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indizes für die Tabelle `images`
@@ -51,6 +60,12 @@ ALTER TABLE `images`
 --
 -- AUTO_INCREMENT für exportierte Tabellen
 --
+
+--
+-- AUTO_INCREMENT für Tabelle `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT für Tabelle `images`
