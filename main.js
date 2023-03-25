@@ -34,6 +34,32 @@ db.connect((err) =>{
     console.log("Mysql Connected...")
 })
 
+const createImagesQuery = `
+CREATE TABLE IF NOT EXISTS images (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  url tinytext NOT NULL,
+  category tinytext NOT NULL,
+  text tinytext NOT NULL,
+  PRIMARY KEY (id)
+)`;
+
+db.query(createImagesQuery, (error, results, fields) => {
+  if (error) throw error;
+});
+
+const createCategorysQuery = `
+CREATE TABLE IF NOT EXISTS categories (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  category tinytext NOT NULL,
+  PRIMARY KEY (id)
+)`;
+
+db.query(createCategorysQuery, (error, results, fields) => {
+  if (error) throw error;
+});
+
+
+
 app.set("view engine", "ejs")
 
 //index
