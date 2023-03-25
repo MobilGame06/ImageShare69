@@ -42,7 +42,7 @@
     git clone https://github.com/MobilGame06/ImageShare69.git
      ```
                    
-2. Create a user account with own database in mysql and import the provided sql file([imageShare69.sql](https://github.com/MobilGame06/ImageShare69/blob/main/imageShare69.sql))
+2. Create a user account with own database in mysql
 
 3. Install NPM packages (ONLY when not using installer)
    ```sh
