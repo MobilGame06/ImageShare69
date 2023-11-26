@@ -65,7 +65,7 @@
 ### Usage
 to add Categories and images you need to start the app.js script
 ```sh
-node app.js
+node add.js
 ```
 
 then follow the menu prompts.
